@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Thiết lập màu và chiều rộng của ô input */
+        input {
+            width: 300px;
+            height: 50px;
+            border: none;
+            font-size: 16px;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Thiết lập style cho button */
+        button {
+            height: 50px;
+            width: 150px;
+            border: none;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Áp dụng animation cho ô input */
+        input[type="password"] {
+            animation: colorRun 2s linear forwards;
+            /* Thời gian chạy và lưu trữ kết quả cuối cùng */
+        }
+
+        /* Đặt style cho div chứa input và biểu tượng trái tim */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Style cho biểu tượng trái tim */
+        .heart-icon {
+            font-size: 24px;
+            color: red;
+        }
+
+        /* Để canh giữa văn bản trong ô input */
+        input[type="password"].centered {
+            text-align: center;
+        }
+
+        /* Màu chữ đỏ cho ô input khi đạt 100% */
+        input[type="password"].red-text {
+            color: red;
+        }
+
+        .centered {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Animation cho ô input */
+        @keyframes colorRun {
+            0% {
+                background-color: #f5f5f5;
+            }
+
+            100% {
+                background-color: #ffc107;
+            }
+        }
+
+        .unselectable {
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE10+/Edge */
+            user-select: none;
+            /* Standard */
+        }
+    </style>
+</head>
+
+<body style="background-color: #f5f3f3">
+
+    <div class="container unselectable">
+        <img src="avt.jpg" id="wrongPasswordIcon" style="width: 100px; display: none;">
+
+        Mời bạn nhập mật khẩu iloveyouhzan <br><br>
+        <div style="display: flex; align-items: center;">
+            <input type="password" class="centered" style="height: 50px; margin: 0; padding: 0;">
+            <button onclick="checkPassword()" style="height: 50px; margin: 0; padding: 0;">Sẵn Sàng</button>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var inputPassword = document.querySelector('.centered').value;
+            var correctPassword = "iloveyouhzan";
+
+            if (inputPassword !== correctPassword) {
+                document.getElementById("wrongPasswordIcon").style.display = "inline";
+            } else {
+
+                window.location.href = "loading.html"; // Thay đổi đường dẫn đến trang cần chuyển đến
+            }
+        }
+    </script>
+
+</body>
+
+</html>

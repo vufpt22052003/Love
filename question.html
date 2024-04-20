@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trang Bootstrap</title>
+    <!-- Bao gồm các tệp CSS và JS của Bootstrap -->
+    <!-- Bao gồm thư viện Font Awesome -->
+    <!-- Bao gồm các tệp CSS và JS của Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="question.css">
+    <!-- Thẻ audio để nhúng âm thanh -->
+
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <audio autoplay>
+        <source src="Trend please tell me why #cover #music.mp4">
+    </audio>
+    <div class="overlay"></div> <!-- Lớp overlay để tạo hiệu ứng mờ -->
+    <div class="containers content">
+        <div class="row">
+            <!-- <div class="col-md-12 d-flex align-items-center">
+                <img src="QWYEkBP.jpeg" class="img-fluid" style="opacity: 0.3;">
+            </div>  -->
+
+            <div class="" style="height: 100vh;text-align: center;    margin-left: 560px;    margin-top: 210px;">
+                <div class="mb-5 text-center">Bạn hzan có iu mình không</div>
+                <div class="d-flex justify-content-center">
+                    <button id="movingButton" class="mr-2"
+                        style="position: relative; background-color: #4b35dc;">Không</button>
+                    <button id="yes" style="position: relative;background-color: #dc3545;">Có , mình rất có</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p style=" font-family: Courier, monospace; font-size: 40px;text-align: center;">Anh cũng vậy hahahaha</p>
+
+            <br><button id="open" style="width: 240px; margin-left: 400px;">Tặng em quà nè , mở ra đi</button>
+
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById("open").addEventListener("click", function () {
+            // Redirect to another page
+            window.location.href = "music.html"; // Replace "https://example.com/otherpage" with the URL of the page you want to redirect to
+        });
+        // Lấy ra nút cần di chuyển
+        var button = document.getElementById("movingButton");
+
+        // Thêm sự kiện "mouseover" vào nút
+        button.addEventListener("mouseover", function (event) {
+            // Tạo ngẫu nhiên vị trí mới cho nút
+            var newX = Math.random() * (window.innerWidth - button.offsetWidth);
+            var newY = Math.random() * (window.innerHeight - button.offsetHeight);
+
+            // Đặt lại vị trí mới cho nút
+            button.style.position = "absolute";
+            button.style.left = newX + "px";
+            button.style.top = newY + "px";
+        });
+
+        //model
+        // Lấy phần tử modal
+        var modal = document.getElementById("myModal");
+
+        // Lấy nút để đóng modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Khi người dùng nhấp vào nút "Có , mình rất có", hiển thị modal
+        document.getElementById("yes").onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Khi người dùng nhấp vào nút đóng, ẩn modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Khi người dùng nhấp ra ngoài modal, ẩn modal
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

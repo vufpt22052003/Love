@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text Animation with Music</title>
+    <!-- Bao gồm các tệp CSS và JS của Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Thẻ audio để nhúng âm thanh -->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('Nền-hồng-trái-tim.jpg');
+        }
+
+        #centered-text {
+            font-size: 24px;
+            /* Adjust font size for better mobile readability */
+            white-space: normal;
+            /* Allow text to wrap */
+            max-width: 80%;
+            /* Limit text width for mobile screens */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Phát nhạc tại thời điểm mong muốn -->
+    <audio autoplay id="myAudio">
+        <source src="music.mp3">
+    </audio>
+    <div class="container content">
+        <div class="row">
+            <!-- Khung chữ bên phải -->
+            <div>
+                <div id="text-container" style="font-size: 70px;font-family: Courier, monospace;"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tone"></script>
+    <script>
+        var text = "My baby love you so much forever you and I I love you oh! I love you so much forever you and I ";
+        var index = 0;
+        var speed = 100; // Tốc độ hiển thị, càng nhỏ càng nhanh
+
+        // Hàm hiển thị văn bản
+        function showText() {
+            var container = document.getElementById('text-container');
+            container.textContent = text.slice(0, index);
+
+            index++;
+
+            // Kiểm tra xem đã hiển thị hết văn bản chưa
+            if (index <= text.length) {
+                setTimeout(showText, speed);
+            }
+        }
+
+        // Hiển thị văn bản sau khi trang web được tải
+        document.addEventListener("DOMContentLoaded", function () {
+            var audio = document.getElementById("myAudio");
+
+            // Bắt đầu hiển thị chữ từ giây thứ 3 của âm thanh
+            audio.onloadedmetadata = function () {
+                setTimeout(function () {
+                    showText();
+                }, 3200); // Delay 3 giây (3000ms) để bắt đầu hiển thị chữ
+            };
+
+            // Kiểm tra thời gian và tạm dừng nhạc ở giây thứ 13
+            setInterval(function () {
+                if (audio.currentTime >= 13) {
+                    audio.pause();
+                }
+            }, 1000); // Kiểm tra mỗi giây
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/n ấn button mới thưdcj hiện
+</body>
+
+</html>

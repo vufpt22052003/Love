@@ -1,0 +1,140 @@
+body {
+    background-image: url('QWYEkBP.jpeg');
+    /* background-image: url('QWYEkBP.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background-color: #f5f3f3;
+    overflow: hidden; /* Vô hiệu hóa cuộn màn hình */
+
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Màu trắng với độ trong suốt 50% */
+    z-index: -1;
+    /* Đặt lớp này xuống phía dưới */
+}
+
+.content {
+    margin-right: 15px;
+    /* Điều chỉnh giá trị tùy ý */
+}
+
+#centered-text {
+    font-size: 24px;
+    /* Adjust font size for better mobile readability */
+    white-space: normal;
+    /* Allow text to wrap */
+    max-width: 80%;
+    /* Limit text width for mobile screens */
+}
+
+/* Phần văn bản */
+.text-center {
+    font-size: 24px;
+    color: #333;
+    /* Màu văn bản */
+}
+
+/* Nút "Không" */
+#movingButton,
+#yes {
+    padding: 10px 20px;
+    /* Kích thước nút */
+    border: none;
+    /* Loại bỏ viền */
+    border-radius: 5px;
+    /* Bo tròn viền */
+
+    /* Màu nền */
+    color: #fff;
+    /* Màu chữ */
+    font-size: 16px;
+    cursor: pointer;
+    /* Con trỏ nút */
+    transition: background-color 0.3s ease;
+    /* Hiệu ứng chuyển đổi màu nền */
+}
+
+/* Khi rê chuột vào nút */
+#movingButton:hover,
+#yes:hover {
+
+    /* Màu nền khi hover */
+}
+
+.mb-5.text-center {
+    font-family: Courier, monospace;
+    /* Thiết lập font là Courier */
+    font-size: 30px;
+    /* Thiết lập kích thước chữ là 7 */
+}
+
+/* Style cho modal */
+.modal {
+    display: none;
+    /* Ẩn modal mặc định */
+    position: fixed;
+    /* Chế độ hiển thị cố định */
+    z-index: 1;
+    /* Hiển thị modal trên tất cả các phần tử khác */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Cuộn nội dung modal nếu nội dung quá dài */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Màu nền với độ trong suốt */
+}
+
+/* Style cho nội dung modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* Hiển thị modal giữa màn hình */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    /* Độ rộng của modal */
+}
+
+/* Style cho nút đóng modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}/* Loại bỏ phần đóng (dấu X) */
+.close {
+    display: none;
+  }
+  #open {
+    width: 150px; /* Độ rộng của nút */
+    margin-left: 530px; /* Khoảng cách từ trái của nút đến lề trái của trình duyệt */
+    padding: 10px; /* Khoảng cách giữa viền và văn bản trong nút */
+    background-color: #95a2b0; /* Màu nền của nút */
+    color: #fff; /* Màu chữ của nút */
+    border: none; /* Loại bỏ viền */
+    border-radius: 5px; /* Bo tròn viền */
+    font-size: 16px; /* Kích thước chữ */
+    cursor: pointer; /* Hiển thị con trỏ khi di chuột qua nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+}
+
+#open:hover {
+    background-color: #0056b3; /* Màu nền của nút khi di chuột qua */
+}
+  
